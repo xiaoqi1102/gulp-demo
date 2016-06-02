@@ -2,7 +2,7 @@
   "name": "gulp-demo",
   "version": "1.0.0",
   "description": "gulp-demo",
-  "main": "server.js",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "npm test"
   },
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/xiaoqi1102/gulp-demo#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
     "gulp-uglify": "^1.5.3"
   }
 }
