@@ -21,6 +21,7 @@
   "homepage": "https://github.com/xiaoqi1102/gulp-demo#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-less": "^3.1.0",
     "gulp-uglify": "^1.5.3"
   }
 }
