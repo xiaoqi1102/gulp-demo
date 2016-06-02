@@ -3,4 +3,7 @@
  */
 function hello(){
     console.log('hello this is index.js');
+    setTimeout(function(){
+        console.log('continue');
+    },1000);
 }
