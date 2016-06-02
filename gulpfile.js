@@ -7,7 +7,8 @@ var gulp=require('gulp'),
     cssMin=require('gulp-minify-css'),
     sourceMaps=require('gulp-sourcemaps'),
     notify=require('gulp-notify'),
-    plumber=require('gulp-plumber');
+    plumber=require('gulp-plumber'),
+    liveReload=require('gulp-livereload');
 gulp.task('jsmin',function(){
    gulp.src('src/js/index.js')
        .pipe(uglify())
@@ -22,8 +23,14 @@ gulp.task('testLess',function(){
         .pipe(sourceMaps.write())
         .pipe(cssMin({compatibility:'ie7'}))//兼容IE7及以下需设置compatibility属性 .pipe(cssmin({compatibility: 'ie7'}))
         .pipe(gulp.dest('dist/css'))
+        .pipe(liveReload())
 });
 gulp.task('testWatch',function(){
     gulp.watch(['src/**/*.less','src/**/*.js'],['testLess','jsmin']);
+});
+gulp.task('watch',function(){
+    liveReload.listen();
+    gulp.watch('src/**/*.less',['testLess'])
+
 });
 gulp.task('default',['testLess','jsmin']);
