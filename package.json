@@ -1,0 +1,25 @@
+{
+  "name": "gulp-demo",
+  "version": "1.0.0",
+  "description": "gulp-demo",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaoqi1102/gulp-demo.git"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "xiaoqi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiaoqi1102/gulp-demo/issues"
+  },
+  "homepage": "https://github.com/xiaoqi1102/gulp-demo#readme",
+  "devDependencies": {
+    "gulp-uglify": "^1.5.3"
+  }
+}
