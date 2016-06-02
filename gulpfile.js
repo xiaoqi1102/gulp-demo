@@ -11,7 +11,7 @@ gulp.task('jsmin',function(){
 });
 
 gulp.task('testLess',function(){
-    gulp.src(['src/less/style.less','src/less/page.less'])
+    gulp.src(['src/less/*.less'])
         .pipe(less())
         .pipe(gulp.dest('dist/css'))
 });
