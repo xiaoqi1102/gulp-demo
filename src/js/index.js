@@ -4,6 +4,7 @@
 function hello(){
     console.log('hello this is index.js');
     setTimeout(function(){
-        console.log('continue');
+        console.log('continue run');
+        return false;
     },1000);
 }

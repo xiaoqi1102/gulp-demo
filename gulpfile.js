@@ -20,5 +20,7 @@ gulp.task('testLess',function(){
         .pipe(cssMin({compatibility:'ie7'}))//兼容IE7及以下需设置compatibility属性 .pipe(cssmin({compatibility: 'ie7'}))
         .pipe(gulp.dest('dist/css'))
 });
-
+gulp.task('testWatch',function(){
+    gulp.watch(['src/**/*.less','src/**/*.js'],['testLess','jsmin']);
+});
 gulp.task('default',['testLess','jsmin']);
