@@ -5,7 +5,9 @@ var gulp=require('gulp'),
     uglify=require('gulp-uglify'),
     less=require('gulp-less'),
     cssMin=require('gulp-minify-css'),
-    sourceMaps=require('gulp-sourcemaps');
+    sourceMaps=require('gulp-sourcemaps'),
+    notify=require('gulp-notify'),
+    plumber=require('gulp-plumber');
 gulp.task('jsmin',function(){
    gulp.src('src/js/index.js')
        .pipe(uglify())
@@ -16,6 +18,7 @@ gulp.task('testLess',function(){
     gulp.src(['src/less/*.less'])
         .pipe(sourceMaps.init())
         .pipe(less())
+        .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
         .pipe(sourceMaps.write())
         .pipe(cssMin({compatibility:'ie7'}))//兼容IE7及以下需设置compatibility属性 .pipe(cssmin({compatibility: 'ie7'}))
         .pipe(gulp.dest('dist/css'))
